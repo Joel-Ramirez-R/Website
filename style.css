@@ -1,0 +1,153 @@
+:root {
+    --bg:#0f1724; --card:#0b1220; --accent:#6ee7b7; --muted:#94a3b8; --glass:rgba(255,255,255,0.03);
+    --max-width:1100px; --radius:14px; --gap:18px;
+    font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  }
+  
+  * { box-sizing:border-box }
+  
+  body {
+    margin:0;
+    background:linear-gradient(180deg,#071027 0%, #081129 60%);
+    color:#e6eef8;
+    line-height:1.45;
+  }
+  
+  .container { max-width:var(--max-width); margin:40px auto; padding:24px }
+  header { display:flex; align-items:center; justify-content:space-between; margin-bottom:26px }
+  .brand { display:flex; gap:14px; align-items:center }
+  .logo {
+    width:56px; height:56px; border-radius:12px;
+    background:linear-gradient(135deg,var(--accent),#5eead4);
+    display:flex; align-items:center; justify-content:center;
+    color:#042024; font-weight:700;
+  }
+  nav a { color:var(--muted); text-decoration:none; margin-left:18px }
+  
+  .hero { display:grid; grid-template-columns:1fr 420px; gap:30px; align-items:center; margin-bottom:30px }
+  .card { background:var(--card); padding:22px; border-radius:var(--radius); box-shadow:0 6px 20px rgba(2,6,23,0.6) }
+  h1 { margin:0 0 12px; font-size:28px }
+  p.lead { color:var(--muted); margin:0 0 18px }
+  .cta { display:flex; gap:12px }
+  .btn { background:var(--accent); color:#022; padding:10px 16px; border-radius:10px; text-decoration:none; font-weight:600 }
+  .btn.ghost { background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--muted) }
+  .features { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:14px }
+  .feature { background:var(--glass); padding:12px; border-radius:10px; color:var(--muted); font-size:14px }
+  
+  /* right panel */
+  .panel { padding:18px; border-radius:12px; background:linear-gradient(180deg,rgba(255,255,255,0.02), transparent) }
+  .pitch { font-weight:700; margin-bottom:8px }
+  .small { font-size:13px; color:var(--muted) }
+  
+  
+  /* portfolio */
+  .portfolio { display:grid; grid-template-columns:repeat(3,1fr); gap:14px }
+  .proj {
+    height:160px; border-radius:10px; display:flex; flex-direction:column;
+    justify-content:flex-end; padding:12px; background-size:cover; background-position:center;
+    position:relative; overflow:hidden;
+  }
+  .proj::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg,rgba(2,6,23,0.7),transparent) }
+  .proj h4 { margin:0; z-index:2 }
+  .proj p { margin:6px 0 0; font-size:13px; color:var(--muted); z-index:2 }
+  
+  /* contact */
+  .contact { display:grid; grid-template-columns:1fr 320px; gap:18px; margin-top:28px }
+  label { display:block; font-size:13px; margin-bottom:6px }
+  input,textarea {
+    width:100%; padding:10px; border-radius:8px;
+    border:1px solid rgba(255,255,255,0.04);
+    background:transparent; color:inherit;
+  }
+  textarea { min-height:120px }
+  .footer {
+    margin-top:26px; padding:18px; border-radius:12px;
+    background:rgba(255,255,255,0.02);
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  
+  /* responsive */
+  @media(max-width:980px){
+    .hero{ grid-template-columns:1fr; }
+    .packages,.portfolio{ grid-template-columns:1fr; }
+    .contact{ grid-template-columns:1fr; }
+  }
+  
+  /* subtle animations */
+  .fade { opacity:0; transform:translateY(8px); animation:fadeIn .6s forwards }
+  @keyframes fadeIn { to{ opacity:1; transform:none } }
+  
+
+  /* ================================ Efecto hover para el menú ============================= */
+nav a {
+  position: relative; /* necesario para ::after */
+  transition: color 0.3s ease;
+  padding: 5px 0; /* opcional: un poco de espacio arriba y abajo */
+}
+
+/* línea animada debajo del texto */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* ajusta la distancia de la línea respecto al texto */
+  width: 0%;
+  height: 2px; /* grosor de la línea */
+  background-color: var(--accent); /* color de tu tema */
+  transition: width 0.3s ease;
+}
+
+/* hover */
+nav a:hover {
+  color: var(--accent);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* =======================================  Hover para botones ==================================== */
+.btn, .btn.ghost {
+  position: relative; /* necesario para ::after */
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Línea animada debajo */
+.btn::after, .btn.ghost::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0; /* línea al final del botón */
+  width: 0%;
+  height: 3px; /* grosor de la línea */
+  background-color: var(--accent); /* color de la línea */
+  transition: width 0.3s ease;
+}
+
+/* hover */
+.btn:hover, .btn.ghost:hover {
+  color: var(--accent);
+}
+
+/* expandir línea al pasar el cursor */
+.btn:hover::after, .btn.ghost:hover::after {
+  width: 100%;
+}
+
+
+.proj,
+.proj:visited,
+.proj:hover,
+.proj:active {
+  color: white;
+  text-decoration: none;
+}
+
+.card.panel a {
+  color: white;             /* Cambia el color del texto a blanco */
+  text-decoration: none;    /* (Opcional) quita el subrayado */
+}
+
+.card.panel a:hover {
+  text-decoration: underline; /* (Opcional) agrega efecto al pasar el mouse */
+}
