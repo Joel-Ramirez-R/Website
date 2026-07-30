@@ -148,6 +148,10 @@ nav a:hover::after {
   text-decoration: none;    /* (Opcional) quita el subrayado */
 }
 
+.card.panel a:hover {
+  text-decoration: underline; /* (Opcional) agrega efecto al pasar el mouse */
+}
+
  /* Dashboard */
 
 
@@ -198,7 +202,4 @@ nav a:hover::after {
         border:none;
     }
 
-}
-.card.panel a:hover {
-  text-decoration: underline; /* (Opcional) agrega efecto al pasar el mouse */
 }
