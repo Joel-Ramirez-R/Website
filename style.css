@@ -167,7 +167,17 @@ nav a:hover::after {
 }
 
 
-@media (max-width:768px) and (orientation:portrait){    /* Vertical */
+@media (max-width:768px) and (orientation:portrait){ /* Vertical */
+
+    header,
+    nav,
+    .project h1,
+    .lead,
+    .dashboard_imdb,
+    .btn,
+    .footer{
+        display:none;
+    }
 
     .rotate-message{
         display:flex;
@@ -175,31 +185,49 @@ nav a:hover::after {
         justify-content:center;
         align-items:center;
         text-align:center;
-        height:70vh;
-        padding:20px;
+        height:100vh;
+        padding:30px;
     }
 
     .rotate-message h2{
         margin-bottom:10px;
     }
 
-    .dashboard_imdb{
-        display:none;
-    }
-
 }
 
-@media (max-width:768px) and (orientation:landscape){   /* Horizontal */
+@media (max-width:768px) and (orientation:landscape){  /* Horizontal */
+
+    header,
+    nav,
+    .project h1,
+    .lead,
+    .btn,
+    .footer{
+        display:none;
+    }
 
     .rotate-message{
         display:none;
     }
 
+    .container{
+        max-width:100%;
+        width:100%;
+        margin:0;
+        padding:0;
+    }
+
+    .project{
+        margin:0;
+        padding:0;
+    }
+
     .dashboard_imdb{
         display:block;
-        width:100%;
-        height:90vh;
+        width:100vw;
+        height:100vh;
         border:none;
+        border-radius:0;
     }
 
 }
