@@ -148,6 +148,57 @@ nav a:hover::after {
   text-decoration: none;    /* (Opcional) quita el subrayado */
 }
 
+ /* Dashboard */
+
+
+.rotate-message{
+    display:none;
+}
+
+ .dashboard_imdb{
+    width:100%;
+    height:70vh;
+    border:none;
+    border-radius:12px;
+}
+
+
+@media (max-width:768px) and (orientation:portrait){    /* Vertical */
+
+    .rotate-message{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        height:70vh;
+        padding:20px;
+    }
+
+    .rotate-message h2{
+        margin-bottom:10px;
+    }
+
+    .dashboard{
+        display:none;
+    }
+
+}
+
+@media (max-width:768px) and (orientation:landscape){   /* Horizontal */
+
+    .rotate-message{
+        display:none;
+    }
+
+    .dashboard{
+        display:block;
+        width:100%;
+        height:90vh;
+        border:none;
+    }
+
+}
 .card.panel a:hover {
   text-decoration: underline; /* (Opcional) agrega efecto al pasar el mouse */
 }
