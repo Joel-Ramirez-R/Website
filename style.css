@@ -172,25 +172,22 @@ nav a:hover::after {
 
     /* Vertical */
 
+
 @media (max-width:768px) and (orientation:portrait){
 
-    header,
-    nav,
-    h1,
-    .lead,
-    .dashboard_imdb,
-    .back-button,
-    .footer{
+    /* Ocultar únicamente el dashboard */
+    .dashboard_imdb{
         display:none;
     }
 
+    /* Mostrar el mensaje */
     .rotate-message{
         display:flex;
         flex-direction:column;
         justify-content:center;
         align-items:center;
         text-align:center;
-        height:100vh;
+        min-height:50vh;
         padding:30px;
     }
 
