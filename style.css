@@ -172,7 +172,6 @@ nav a:hover::after {
 
     /* Vertical */
 
-
 @media (max-width:768px) and (orientation:portrait){
 
     /* Ocultar únicamente el dashboard */
